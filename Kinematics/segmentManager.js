@@ -33,6 +33,9 @@ class SegmentManager {
             segment.drag(x, y)
             x = segment.x
             y = segment.y
+        }
+        for (let i = 0; i < this.segments.length; i++) {
+            const segment = this.segments[i];
             this.draw(i)
         }
     }
