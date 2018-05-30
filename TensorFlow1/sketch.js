@@ -6,7 +6,13 @@ const sketch = (p5) => {
 
     p5.setup = () => {
         let canvas = p5.createCanvas(600, 600)
-        canvas.mouseReleased(mouseReleased)
+
+        canvas.mouseClicked(() => {
+            const x = normalizeX(p5.mouseX)
+            const y = normalizeY(p5.mouseY)
+            points.push({ x, y })
+            return false
+        })
     }
 
     p5.draw = () => {
@@ -19,7 +25,7 @@ const sketch = (p5) => {
         const y2 = denormalizeY(ys[1])
 
         p5.stroke(0)
-        p5.line(-1, y1, p5.width, y2)
+        p5.line(0, y1, p5.width, y2)
 
 
         if (points.length > 0) {
@@ -33,14 +39,6 @@ const sketch = (p5) => {
                 p5.ellipse(x, y, 8)
             }
         }
-    }
-
-    const mouseReleased = () => {
-        const x = normalizeX(p5.mouseX)
-        const y = normalizeY(p5.mouseY)
-        console.log(x)
-        console.log(y)
-        points.push({ x, y })
     }
 
     const normalizeX = x => p5.map(x, 0, p5.width, -1, 1)
