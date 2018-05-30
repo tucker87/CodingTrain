@@ -6,7 +6,7 @@ const sketch = (p5) => {
 
     p5.setup = () => {
         let canvas = p5.createCanvas(600, 600)
-        canvas.mousePressed(mousePressed)
+        canvas.mouseReleased(mouseReleased)
     }
 
     p5.draw = () => {
@@ -35,9 +35,11 @@ const sketch = (p5) => {
         }
     }
 
-    const mousePressed = () => {
+    const mouseReleased = () => {
         const x = normalizeX(p5.mouseX)
         const y = normalizeY(p5.mouseY)
+        console.log(x)
+        console.log(y)
         points.push({ x, y })
     }
 
