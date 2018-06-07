@@ -10,7 +10,6 @@ console.log(JSON.stringify(chain, null, 4));
 console.log("Is chain valid? " + chain.checkValid());
 
 
-
 let app = new Vue({
     el: "#main",
     data: {

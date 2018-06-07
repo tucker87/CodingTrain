@@ -1,0 +1,18 @@
+.blocks a {
+  display: inline-block;
+  padding: 15px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  text-align: center;
+  width: 150px;
+}
+.blocks a .title {
+  color: black;
+  font-size: large;
+  padding: 5px;
+  text-decoration: underline;
+}
+.blocks a .desc {
+  display: block;
+  color: #444;
+}
