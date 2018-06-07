@@ -1,8 +1,16 @@
+<link rel="stylesheet" href="../lib/root.css">
+
 <div id="main">
-    <ul>
-        <li v-for="item in items">{{item.name}}</li>
-    </ul>
+    <div class="blocks">
+        <div v-for="item in items">
+            <h2>{{item.name}}</h2>
+            <input type="button" value="Kill Undead" @click="killUndead(item)" />
+        </div>
+    </div>
+
+    <pre>{{ items }}</pre>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 <script src="lib/sha256.js"></script>

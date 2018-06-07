@@ -25,22 +25,22 @@ class ItemChain {
         let d = new Date()
         let timeStamp = `${d.getFullYear()}\\${d.getMonth()}\\${d.getDate()}`
         let newItem = new Item(timeStamp, data)
-        newItem.previousHash = this.latestItem().hash;
-        newItem.hash = newItem.calculateHash();
-        this.chain.push(newItem);
+        newItem.previousHash = this.latestItem().hash
+        newItem.hash = newItem.calculateHash()
+        this.chain.push(newItem)
     }
 
     checkValid() {
         for (let i = 1; i < this.chain.length; i++) {
-            const currentItem = this.chain[i];
-            const previousItem = this.chain[i - 1];
+            const currentItem = this.chain[i]
+            const previousItem = this.chain[i - 1]
 
             if (currentItem.hash !== currentItem.calculateHash()) {
-                return false;
+                return false
             }
 
             if (currentItem.previousHash !== previousItem.hash) {
-                return false;
+                return false
             }
         }
 

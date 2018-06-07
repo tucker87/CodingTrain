@@ -1,18 +1,20 @@
-.blocks a {
+.blocks > * {
   display: inline-block;
   padding: 15px;
   border: 1px solid #ccc;
   text-decoration: none;
   text-align: center;
   width: 150px;
+  margin: 5px;
+  vertical-align: top;
 }
-.blocks a .title {
+.blocks > * .title {
   color: black;
   font-size: large;
   padding: 5px;
   text-decoration: underline;
 }
-.blocks a .desc {
+.blocks > * .desc {
   display: block;
   color: #444;
 }

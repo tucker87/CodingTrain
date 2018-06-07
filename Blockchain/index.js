@@ -3,12 +3,8 @@ import Item from './Item.js'
 
 
 let chain = new ItemChain();
-chain.addItem({name: 'Some Sword'});
-chain.addItem({name: 'A Better Sword'});
-
-console.log(JSON.stringify(chain, null, 4));
-console.log("Is chain valid? " + chain.checkValid());
-
+chain.addItem({name: 'Some Sword', kills: {} });
+chain.addItem({name: 'A Better Sword', kills: {} });
 
 let app = new Vue({
     el: "#main",
@@ -16,7 +12,8 @@ let app = new Vue({
         items: chain.getItems()
     },
     methods: {
-        add: name => items.push({name})
+        add: name => items.push({name}),
+        killUndead: item => console.log(item)
     }
 })
 
