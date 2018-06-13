@@ -3,17 +3,18 @@ import Item from './Item.js'
 
 
 let chain = new ItemChain();
-chain.addItem({name: 'Some Sword', kills: {} });
-chain.addItem({name: 'A Better Sword', kills: {} });
+chain.addItem({name: 'Some Sword', kills: {}, index: 0});
+chain.addItem({name: 'A Better Sword', kills: {}, index: 1 });
 
 let app = new Vue({
     el: "#main",
-    data: {
-        items: chain.getItems()
-    },
     methods: {
-        add: name => items.push({name}),
-        killUndead: item => console.log(item)
+        killUndead: item => {
+            new Item().kill("undead", item)
+            chain.addItem(item)
+            app.$forceUpdate()
+        },
+        items: () => chain.getItems()
     }
 })
 

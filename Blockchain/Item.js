@@ -1,12 +1,17 @@
 const c = window.CryptoJS
 
 class Item {
-    constructor(timestamp, data) {
-        this.index = 0
+    constructor(timestamp, data, index) {
+        this.index = index
         this.timestamp = timestamp
         this.data = data
         this.previousHash = "0"
         this.hash = this.calculateHash()
+        this.kills = {}
+    }
+
+    kill(key, item) {
+        item.kills[key] = 1 + item.kills[key] || 0
     }
 
     calculateHash() {
