@@ -10,7 +10,7 @@ class Item {
         this.kills = {}
     }
 
-    kill(key, item) {
+    static kill(key, item) {
         item.kills[key] = 1 + item.kills[key] || 0
     }
 

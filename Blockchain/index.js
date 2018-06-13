@@ -10,7 +10,7 @@ let app = new Vue({
     el: "#main",
     methods: {
         killUndead: item => {
-            new Item().kill("undead", item)
+            Item.kill("undead", item)
             chain.addItem(item)
             app.$forceUpdate()
         },

@@ -5,10 +5,6 @@ class ItemChain {
         this.chain = [this.createGenesis()];
     }
 
-    static kill(key, item) {
-        item.kills[key] = 1 + item.kills[key] || 0
-    }
-
     getItems() {
         let items = []
         for (let i = this.chain.length - 1; i >= 1; i--) {
